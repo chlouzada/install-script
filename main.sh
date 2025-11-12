@@ -61,7 +61,7 @@ setup_fish
 setup_mise
 
 # Configurar git
-#setup_git
+setup_git
 
 # Aplicar dotfiles
 #apply_dotfiles

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# git.sh - Configurações avançadas do Git
 
 setup_git() {
     echo "==> Configurando Git..."
@@ -30,15 +29,15 @@ setup_git() {
     git config --global url."git@github.com:".pushInsteadOf "https://github.com"
 
     # GitHub shortcuts
-    git config --global url."git@github.com:".insteadOf "gh:"
-    git config --global url."https://github.com/".insteadOf "gh/:"
+    git config --global url."git@github.com:".insteadOf "gh@"
+    git config --global url."https://github.com/".insteadOf "gh://"
 
     # GitLab shortcuts
-    git config --global url."git@gitlab.com:".insteadOf "gl:"
-    git config --global url."https://gitlab.com/".insteadOf "gl/:"
+    git config --global url."git@gitlab.com:".insteadOf "gl@"
+    git config --global url."https://gitlab.com/".insteadOf "gl://"
 
     # Eurekka (specific to user's work)
-    git config --global url."git@gitlab.eurekka.technology:eurekka-equipe-interna/".insteadOf "eurekka:"
+    git config --global url."git@github.com:Eurekka-Projects/".insteadOf "eurekka:"
 
     echo "✓ Git configurado com sucesso!"
 }
