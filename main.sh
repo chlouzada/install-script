@@ -46,30 +46,20 @@ sudo apt install -y "${apt_packages[@]}" &> /dev/null
 # Source dos módulos
 source "$SCRIPT_DIR/modules/fish.sh"
 source "$SCRIPT_DIR/modules/mise.sh"
-
-source "$SCRIPT_DIR/modules/packages.sh"
 source "$SCRIPT_DIR/modules/git.sh"
+source "$SCRIPT_DIR/modules/packages.sh"
+
 source "$SCRIPT_DIR/modules/dotfiles.sh"
 
-# Executar instalação de pacotes
-# install_packages
-
-# Configurar fish
 setup_fish
-
-# Configurar mise
 setup_mise
-
-# Configurar git
 setup_git
+
+install_packages
 
 # Aplicar dotfiles
 #apply_dotfiles
 
-# Instalar Claude Code
-if ! command -v claude &> /dev/null; then
-    curl -fsSL https://claude.ai/install.sh | bash &> /dev/null
-fi
 
 BASH_RC="$HOME/.bashrc"
 FISH_RC="$HOME/.config/fish/config.fish"
