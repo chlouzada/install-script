@@ -40,6 +40,7 @@ apt_packages=(
     unzip
     jq
     bat
+    libatomic1
 )
 sudo apt install -y "${apt_packages[@]}" &> /dev/null
 
