@@ -17,16 +17,6 @@ bind \e\cf _fzf_search_dir          # Alt+Ctrl+F - Search directories
 bind \e\cs _fzf_search_git_status   # Alt+Ctrl+S - Git status search
 bind \e\cg lazygit                  # Alt+Ctrl+G - Open lazygit
 
-# Load asdf if available
-if test -n (command -v asdf)
-    if test -f $HOME/.nix-profile/share/asdf-vm/asdf.fish
-        source $HOME/.nix-profile/share/asdf-vm/asdf.fish
-        source $HOME/.nix-profile/share/asdf-vm/completions/asdf.fish
-    else if test -f $HOME/.asdf/asdf.fish
-        source $HOME/.asdf/asdf.fish
-    end
-end
-
 # fzf default options
 if not set --query FZF_DEFAULT_OPTS
     set --export FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"'
