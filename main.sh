@@ -41,6 +41,8 @@ apt_packages=(
     jq
     bat
     libatomic1
+    libx11-dev
+    libfreetype6-dev
 )
 sudo apt install -y "${apt_packages[@]}" &> /dev/null
 
@@ -49,12 +51,14 @@ source "$SCRIPT_DIR/modules/fish.sh"
 source "$SCRIPT_DIR/modules/mise.sh"
 source "$SCRIPT_DIR/modules/git.sh"
 source "$SCRIPT_DIR/modules/packages.sh"
+source "$SCRIPT_DIR/modules/gf2.sh"
 
 source "$SCRIPT_DIR/modules/dotfiles.sh"
 
 setup_fish
 setup_mise
 setup_git
+setup_gf2
 
 install_packages
 
