@@ -11,7 +11,7 @@ setup_git() {
     echo "  -> Configurando aliases..."
     git config --global alias.co checkout
     git config --global alias.ci commit
-    git config --global alias.undo '!f() { [[ "$1" == "--hard" ]] && git reset --hard HEAD~${2:-1} || git reset --soft HEAD~${1:-1}; }; f'
+    git config --global alias.undo '!f(){ if [ "$1" = "--hard" ]; then shift; git reset --hard HEAD~${1:-1}; else git reset --soft HEAD~${1:-1}; fi; }; f'
 
     # Init config
     echo "  -> Configurando init defaults..."
